@@ -47,6 +47,7 @@ public class RoomManager {
    *         accessed
    */
   public Room getRoom(String roomName) {
+
     log.debug("Searching for room {}", roomName);
     Room room = rooms.get(roomName);
 

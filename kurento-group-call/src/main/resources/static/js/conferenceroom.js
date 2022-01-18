@@ -144,7 +144,14 @@ function receiveVideo(sender) {
 
 	var options = {
       remoteVideo: video,
-      onicecandidate: participant.onIceCandidate.bind(participant)
+      onicecandidate: participant.onIceCandidate.bind(participant),
+      configuration: {
+        iceServers: [{
+         "urls": 'turn:3.38.118.187:3478?transport=udp',
+         "username" : 'ssafy',
+         "credential" : '1234'
+        }]
+      }
     }
 
 	participant.rtcPeer = new kurentoUtils.WebRtcPeer.WebRtcPeerRecvonly(options,
